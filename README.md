@@ -4,7 +4,7 @@
 
 Built for the igebra.ai Hackathon PS 2026 brief ("GapFinder AI").
 
-- **Live app:** `https://<your-project>.vercel.app` (replace after deploying)
+- **Live app:** https://your-actual-url.vercel.app
 - **Demo login:** `demo@gapfinder.app` / `demo1234` (also a one-click button on the login page)
 - **Fastest tour:** log in as demo, click *Load the sample biology subject*, then follow the five numbered steps.
 
