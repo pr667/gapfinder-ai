@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource/atkinson-hyperlegible/400.css';
+@import '@fontsource/atkinson-hyperlegible/700.css';
+
+@theme {
+  --color-paper: #f2f4f8;
+  --color-surface: #ffffff;
+  --color-ink: #15203b;
+  --color-muted: #566078;
+  --color-line: #d7dce7;
+  --color-pen: #2946c4;
+  --color-pen-dark: #1d3394;
+  --color-hi: #ffe566;
+  --color-weak: #c8402f;
+  --color-weak-bg: #fbe8e4;
+  --color-medium: #d99a1c;
+  --color-medium-ink: #8a5a00;
+  --color-medium-bg: #fcf0d3;
+  --color-strong: #2e8b63;
+  --color-strong-ink: #1c6a48;
+  --color-strong-bg: #e0f2e9;
+  --color-idle-bg: #e9ecf2;
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Atkinson Hyperlegible', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+:focus-visible {
+  outline: 3px solid var(--color-pen);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-ink/25 bg-surface px-4 py-2 font-bold text-ink transition-colors hover:border-ink disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply border-pen bg-pen text-white hover:border-pen-dark hover:bg-pen-dark;
+  }
+  .btn-quiet {
+    @apply border-transparent bg-transparent px-2 font-normal text-muted underline-offset-4 hover:border-transparent hover:text-ink hover:underline;
+  }
+  .panel {
+    @apply rounded-lg border border-line bg-surface;
+  }
+  .field {
+    @apply w-full rounded-md border border-ink/30 bg-surface px-3 py-2 text-ink placeholder:text-muted/70;
+  }
+  .note {
+    @apply text-[0.94rem] text-muted;
+  }
+}
+
+/* The highlighter: marks the exact words in the student's notes that back a claim. */
+mark.hi {
+  background: linear-gradient(transparent 12%, var(--color-hi) 12%, var(--color-hi) 92%, transparent 92%);
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
