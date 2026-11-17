@@ -70,8 +70,8 @@ export async function generateJson<T>(options: {
       throw friendly(error);
     }
     if (finishReason === 'length') {
-    problem = 'the reply was cut off; keep it shorter';
-     continue;
+      problem = 'the reply was cut off; keep it shorter';
+      continue;
     }
     try {
       const parsed = options.schema.safeParse(extractJson(text));
